@@ -36,9 +36,14 @@ def main() -> None:
             obj.update(dt)
 
         for asteroid in asteroids:
-            if asteroid.collision_with(player):
+            if asteroid.collides_with(player):
                 print("Game Over")
                 pygame.quit()
+
+            for shot in shots:
+                if asteroid.collides_with(shot):
+                    shot.kill()
+                    asteroid.kill()
 
         screen.fill("black")
 
