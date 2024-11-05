@@ -22,7 +22,8 @@ def main() -> None:
     Asteroid.containers = (asteroids, updatable, drawable)  # type: ignore
     AsteroidField.containers = updatable  # type: ignore
 
-    asteroid_field = AsteroidField()
+    AsteroidField()
+
     player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
 
     dt = 0.0
@@ -43,7 +44,7 @@ def main() -> None:
             for shot in shots:
                 if asteroid.collides_with(shot):
                     shot.kill()
-                    asteroid.kill()
+                    asteroid.split()
 
         screen.fill("black")
 
