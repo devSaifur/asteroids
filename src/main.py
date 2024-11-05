@@ -1,14 +1,7 @@
 import pygame
-from player import Player
 
-from constants import (
-    SCREEN_HEIGHT,
-    SCREEN_WIDTH,
-    ASTEROID_MIN_RADIUS,
-    ASTEROID_MAX_RADIUS,
-    ASTEROID_SPAWN_RATE,
-    ASTEROID_KINDS,
-)
+from player import Player
+from constants import SCREEN_HEIGHT, SCREEN_WIDTH
 
 
 def main() -> None:
@@ -21,7 +14,7 @@ def main() -> None:
 
     Player.containers = (updatable, drawable)  # type: ignore
 
-    player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
+    Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
 
     dt = 0.0
 
